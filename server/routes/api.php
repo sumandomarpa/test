@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BorrowController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('borrow', [BorrowController::class, 'index']);
+Route::get('borrow/{borrow}', [BorrowController::class, 'show']);
+Route::post('borrow', [BorrowController::class, 'store']);
+Route::put('borrow/{borrow}', [BorrowController::class, 'update']);
