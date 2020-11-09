@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BorrowController;
+use App\Http\Controllers\VehicleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,5 @@ Route::get('borrow', [BorrowController::class, 'index']);
 Route::get('borrow/{borrow}', [BorrowController::class, 'show']);
 Route::post('borrow', [BorrowController::class, 'store']);
 Route::put('borrow/{borrow}', [BorrowController::class, 'update']);
+
+Route::get('vehicle', [VehicleController::class, 'index']);
